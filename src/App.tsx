@@ -2,11 +2,12 @@ import React from "react";
 import { MantineProvider, Slider, createTheme } from "@mantine/core";
 import "./App.css";
 import "@mantine/core/styles.css";
-import '@mantine/carousel/styles.css';
+import "@mantine/carousel/styles.css";
 import HomePage from "./Pages/HomePage";
-import FindJobs from "./Pages/FindJobs";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-
+import FindJobs from "./Pages/FindJobs";
+import Header from "./Header/Header";
+import Footer from "./Footer/Footer";
 function App() {
   const theme = createTheme({
     colors: {
@@ -37,14 +38,17 @@ function App() {
         "#461902",
       ],
     },
+    fontFamily: "Poppins, sans-serif",
   });
   return (
-    <MantineProvider theme={theme}>
+    <MantineProvider defaultColorScheme="dark" theme={theme}>
       <BrowserRouter>
-      <Routes>
-        <Route path="*" element={<HomePage />} />
-        <Route path="/find-job" element={<FindJobs />} />
-      </Routes>
+        <Header />
+        <Routes>
+          <Route path="*" element={<HomePage />} />
+          <Route path="/find-job" element={<FindJobs />} />
+        </Routes>
+        <Footer />
       </BrowserRouter>
     </MantineProvider>
   );

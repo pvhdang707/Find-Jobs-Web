@@ -6,7 +6,7 @@ import {
 import { footer } from "../Data/Data";
 const Footer = () => {
   return (
-    <div className="mt-20 pb-5 flex gap-5 justify-around">
+    <div className="pt-20 pb-5 flex gap-5 justify-around bg-mine-shaft-950 font-['Poppins']">
       <div className="w-1/4 flex flex-col gap-4">
         <div className="flex items-center gap-2">
           <IconZoomMoney className="h-7 w-7" />
@@ -39,3 +39,4 @@ const Footer = () => {
 };
 
 export default Footer;
+
